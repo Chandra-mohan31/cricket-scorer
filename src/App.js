@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import ScoreBoard from './components/ScoreBoardComponent/ScoreBoard';
+import ScoringControls from './components/ScoringControlsComponent/ScoringControls';
+import StatsContainer from './components/StatsContainerComponent/StatsContainer';
+
+
 
 function App() {
+  
+
+
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <div className='top_bar'>
+     <ScoreBoard />
+     <StatsContainer />
+     </div>
+     <div className='score_controls_container'>
+        <ScoringControls />
+     </div>
+    
     </div>
   );
 }
