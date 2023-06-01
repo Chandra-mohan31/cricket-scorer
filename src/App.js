@@ -1,3 +1,4 @@
+import { Box, Grid, Typography } from '@mui/material';
 import './App.css';
 import ScoreBoard from './components/ScoreBoardComponent/ScoreBoard';
 import ScoringControls from './components/ScoringControlsComponent/ScoringControls';
@@ -11,16 +12,33 @@ function App() {
 
  
   return (
-    <div className="App">
-     <div className='top_bar'>
+    <Box className="App">
+      <Typography variant='h6' sx={{
+        textAlign:"center"
+      }}>Cricket Scorer App</Typography>
+
+     <Grid container sx={{
+      placeItems:"center",
+      placeContent:"center"
+     }}>
+     <Grid item xs={12} md={4}>
      <ScoreBoard />
+     </Grid>
+     <Grid item xs={12} md={4}>
      <StatsContainer />
-     </div>
-     <div className='score_controls_container'>
+     </Grid>
+     </Grid>
+
+     <Box sx={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      margin:'30px'
+     }}>
         <ScoringControls />
-     </div>
+        </Box>
     
-    </div>
+    </Box>
   );
 }
 

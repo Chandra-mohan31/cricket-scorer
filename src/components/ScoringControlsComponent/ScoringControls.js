@@ -70,15 +70,21 @@ function ScoringControls() {
     setBowledBall(false);
 }
   return (
-    <div className='score_controls'>
+    <Box className='score_controls'>
         {
             bowledBall ? (
             <Box sx={{
-                margin:'10px'
+                margin:'10px',
+                display: 'flex',
+                flexDirection:'column',
+                alignItems:"center",
+                justifyContent: "center"
             }}>
-                <Typography variant='h5'>Enter the result of ball</Typography>
+                <Typography variant='h5' color='blueviolet'>Enter the result of ball</Typography>
                 
-                <FormControl fullWidth>
+                <FormControl fullWidth sx={{
+                  marginTop:'20px'
+                }}>
   <InputLabel id="demo-simple-select-label">Ball Result</InputLabel>
   <Select
     labelId="demo-simple-select-label"
@@ -86,6 +92,8 @@ function ScoringControls() {
     value={resultOfTheBall}
     label="Age"
     onChange={handleChangeResultOfBall}
+    variant='standard'
+  
   >
     <MenuItem value="dot">dot ball</MenuItem>
     <MenuItem value="single">single taken</MenuItem>
@@ -105,18 +113,18 @@ function ScoringControls() {
     
   </Select>
 </FormControl>
-<Button variant='contained' onClick={updateScoreCard}>Update ScoreCard</Button>
+<Button variant='contained' sx={{marginTop:'20px'}} fullWidth onClick={updateScoreCard}>Update ScoreCard</Button>
                 
                 </Box>
             )
             :
             (
-            <button onClick={bowl}>
+            <Button variant='contained' color='success' onClick={bowl} fullWidth>
              Bowl a ball
-            </button>
+            </Button>
             )
         }
-    </div>
+    </Box>
   )
 }
 
